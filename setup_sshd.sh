@@ -1,5 +1,3 @@
-if [ -n "${ADMIN_PASSWORD-}" ]; then
-    echo "admin:$ADMIN_PASSWORD" | chpasswd
-fi
+echo "admin:${ADMIN_PASSWORD:-admin}" | chpasswd
 
 ssh-keygen -A
