@@ -44,7 +44,7 @@ RUN curl -sSL https://github.com/just-containers/s6-overlay/releases/download/v$
 ADD s6-rc.d /etc/s6-overlay/s6-rc.d
 ADD setup_sshd.sh setup_sshd.sh
 
-COPY runtime /nuts
+COPY runtime_nuts /nuts
 
 ENTRYPOINT ["/init"]
 
