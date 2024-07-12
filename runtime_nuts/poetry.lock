@@ -1468,14 +1468,14 @@ tomli = {version = ">=1.0.0", markers = "python_version < \"3.11\""}
 testing = ["argcomplete", "attrs (>=19.2.0)", "hypothesis (>=3.56)", "mock", "nose", "pygments (>=2.7.2)", "requests", "setuptools", "xmlschema"]
 
 [[package]]
-name = "pytest-prometheus"
-version = "0.1"
-description = "Report test pass / failures to a Prometheus PushGateway"
+name = "pytest-prometheus-pushgateway"
+version = "0.3.2"
+description = "Pytest report plugin for Zulip"
 optional = false
-python-versions = "*"
+python-versions = ">=3.7"
 files = [
-    {file = "pytest-prometheus-0.1.tar.gz", hash = "sha256:37b8cd97b4c8954bd1a88adc7df1b6592f8adc287d02e45fc3ab19f2e2056b0e"},
-    {file = "pytest_prometheus-0.1-py3-none-any.whl", hash = "sha256:ca55fb39e0ebd36e46d38d9875f027b19adbb59820187cf4bd7c52c50572974c"},
+    {file = "pytest-prometheus-pushgateway-0.3.2.tar.gz", hash = "sha256:a75761f6502518803f14efdae2a3d3eccb6007265701d66a3c6afc05b6e3612d"},
+    {file = "pytest_prometheus_pushgateway-0.3.2-py3-none-any.whl", hash = "sha256:2cd2b0c660a073975b44217af2c5b172b8a60cb6f45159c1929c446b5c1912b6"},
 ]
 
 [package.dependencies]
@@ -1996,4 +1996,4 @@ test = ["big-O", "importlib-resources", "jaraco.functools", "jaraco.itertools", 
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9, <3.13"
-content-hash = "2ad15787ba9f1f628d8558aac6cd617a0e33ad734e86b5a5c016c25bcbcb6203"
+content-hash = "5cb8f4dd296271443e4858d47d5dba984a360f060da511e279aa77eab28683e5"
