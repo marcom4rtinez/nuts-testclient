@@ -2,7 +2,7 @@ FROM ubuntu:24.04
 ARG S6_OVERLAY_VERSION=3.1.5.0
 
 RUN mkdir -p /run/sshd &&\
-    userdel -r ubuntu; useradd -rm -d /home/admin -s /bin/bash -g root -G sudo -u 1000 admin 
+    userdel -r ubuntu; useradd -rm -d /home/admin -s /bin/bash -g root -G sudo -u 1000 admin
 ENV ADMIN_PASSWORD=""
 
 ENV DEBIAN_FRONTEND=noninteractive
@@ -48,11 +48,12 @@ COPY runtime_nuts /nuts
 
 ENTRYPOINT ["/init"]
 
+RUN printf "\nexport PROMETHEUS_PUSHGATEWAY_URL="http://prom-pushgateway:9091"\nexport PROMETHEUS_PUSHGATEWAY_JOB="nuts"\ncd /nuts && poetry install && poetry shell" >> /root/.bashrc
 
 # see all original env vars in all processes
 ENV S6_KEEP_ENV=1
 
-EXPOSE 22 
+EXPOSE 22
 
 
 CMD [ "/bin/bash" ]
