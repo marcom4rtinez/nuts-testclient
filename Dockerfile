@@ -48,7 +48,7 @@ COPY runtime_nuts /nuts
 
 ENTRYPOINT ["/init"]
 
-RUN printf "\nexport PROMETHEUS_PUSHGATEWAY_URL="http://prom-pushgateway:9091"\nexport PROMETHEUS_PUSHGATEWAY_JOB="nuts"\ncd /nuts && poetry install && poetry shell" >> /root/.bashrc
+RUN printf "\nexport PROMETHEUS_PUSHGATEWAY_URL="http://prom-pushgateway:9091"\nexport PROMETHEUS_PUSHGATEWAY_JOB="nuts"\ncd /nuts && poetry install && poetry shell\nexport INFRAHUB_TIMEOUT=30" >> /root/.bashrc
 
 # see all original env vars in all processes
 ENV S6_KEEP_ENV=1
